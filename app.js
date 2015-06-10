@@ -13,11 +13,14 @@ app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, './app/views'));
 app.use(express.static(__dirname + '/app/public'));
 
+var Bat = require('./app/models/bat.js');
+
 // route section
 var router = express.Router();
-require( './app/routes' )(router);
+require( './app/routes' )(router, Bat);
 // Register router, to prefix all routes w/ '/api' use: app.use('/api', router);
 app.use(router);
+mongoose.connect('mongodb://localhost/test:12345');
 var port = process.env.PORT || 8008;
 app.listen(port);
 console.log('now serving on port ' + port);
