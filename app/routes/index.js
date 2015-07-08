@@ -34,4 +34,3 @@ exports = module.exports = function(router, Bat) {
 	  });
 
 }
-
