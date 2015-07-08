@@ -2,11 +2,12 @@ doctype html
 html
 	head
 		meta(charset="utf-8")
-		link(rel="stylesheet" type="text/css" href="/css/main.css")
+		link(rel="stylesheet" type="text/css" href="/css/global.css")
 		meta(name="viewport" content="width=device.width, ititial-scale=1")
-		script(src="/js/libs/jquery-1.11.2.mn.js")
-		script(src="/js/js.js")
+		script(src="/js/libs/jquery.js")
 	body
+		a(href="/viewInventory") View Inventory
+		a(href="/batData") Bat Data
 		h1 Welcome to the Baseball Store!
 		#main
 			block content

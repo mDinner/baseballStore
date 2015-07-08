@@ -3,4 +3,16 @@ block content
 	h2 inventory List:
 	p bat 
 	p balls 
-	p cleats 
+	p cleats
+	form(id="createBat" action="/batData" method="post" accept-charset="utf-8" ajax="true")
+		input(class="input" type="text" name="model" placeholder="Model")
+		input(class="input" type="text" name="brand" placeholder="Brand")
+		input(class="input" type="text" name="len" placeholder="Length")
+		input(class="input" type="text" name="barrel_size" placeholder="Barrel Size")
+		input(class="input" type="text" name="weight" placeholder="Weight")
+		input(class="input" type="text" name="created_at" placeholder="Created At")
+		input(class="input" type="text" name="price" placeholder="Price")
+		input(class="input" type="text" name="year" placeholder="Year")
+		br
+		input(type="submit" value="Submit")
+		script(src="/js/createBat.js")
