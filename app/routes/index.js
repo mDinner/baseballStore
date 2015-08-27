@@ -12,7 +12,7 @@ exports = module.exports = function(router, Bat) {
 		res.render('batCreateSuccess');
 	});
 
-	router.get('/batDetails', function(req, res){
+	router.get('/batDetails/:bat_id', function(req, res){
 		res.render('batDetails');
 	});
 
@@ -47,7 +47,7 @@ exports = module.exports = function(router, Bat) {
 	  		if(err){
 	  			res.send(err);
 	  		}
-	  		res.render('batDetails');
+	  		res.json(bat);
 	  	});
 	  });
 
