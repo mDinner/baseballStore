@@ -8,6 +8,14 @@ exports = module.exports = function(router, Bat) {
 		res.render('viewInventory');
 	});
 
+	router.get('/batCreateSuccess', function(req, res){
+		res.render('batCreateSuccess');
+	});
+
+	router.get('/batDetails', function(req, res){
+		res.render('batDetails');
+	});
+
 	router.route('/batData')
 		.get(function(req, res) {
 			Bat.find(function(err, bats) {
@@ -29,8 +37,18 @@ exports = module.exports = function(router, Bat) {
 			bat.save(function(err) {
 				if (err)
 					res.send(err);
-				res.json({ message: 'Bat Created!'});
+				res.render('batCreateSuccess');
 			});
+	  });
+
+	  router.route('/batData/:bat_id')
+	  .get(function(req, res){
+	  	Bat.findById(req.params.bat_id, function(err, bat){
+	  		if(err){
+	  			res.send(err);
+	  		}
+	  		res.render('batDetails');
+	  	});
 	  });
 
 }
